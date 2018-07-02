@@ -13,10 +13,10 @@
                             <a class="secondary-content" href="#" onclick="event.preventDefault();
 				var del = confirm('Are you sure that you want to delete this task?');
 				if(del==true){
-				document.getElementById('delete-form').submit();}">
+				document.getElementById('df-{{$task->id}}').submit();}">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </a>
-                            <form id="delete-form" action="{{route('task.destroy',$task->slug)}}" method="POST" style="display: none;">
+                            <form id="df-{{$task->id}}" action="{{route('task.destroy',$task->slug)}}" method="POST" style="display: none;">
                                 {{ csrf_field() }}{{ method_field('DELETE') }}
                             </form>
 
